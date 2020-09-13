@@ -1,0 +1,49 @@
+{
+  "name": "tim-robots",
+  "version": "1.0.0",
+  "description": "Robot challenge code that came out of a discussion with a friend",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format:base": "prettier --config .prettierrc \"src/**/*.{js,ts,tsx,css}\"",
+    "format:check": "npm run format:base -- --check",
+    "lint": "eslint \"src/**/*.{js,ts}\"",
+    "build": "tsc"
+  },
+  "author": "Timothy Jones",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.1.0",
+    "@typescript-eslint/parser": "^4.1.0",
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "prettier": "^2.1.1",
+    "typescript": "^4.0.2"
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "prettier",
+      "prettier/react",
+      "prettier/@typescript-eslint",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:import/typescript"
+    ],
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "rules": {
+      "@typescript-eslint/no-explicit-any": "error",
+      "comma-dangle": "off",
+      "arrow-body-style": [
+        "error",
+        "as-needed"
+      ]
+    }
+  }
+}
