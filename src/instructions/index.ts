@@ -1,5 +1,5 @@
 import { InstructionType, PlaceInstruction, Instruction } from './types';
-import { RobotFacing, RobotPosition } from '../simulator/state/types';
+import { RobotFacing } from '../simulator/state/types';
 
 const parsePosition = (params: string) => {
   const tokens = params.split(',');
@@ -35,7 +35,7 @@ const instructions: { [idx: string]: InstructionGenerator } = {
     return {
       type: InstructionType.Place,
       position: parsePosition(tokens[1]),
-    };
+    } as PlaceInstruction;
   },
 };
 
